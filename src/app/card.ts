@@ -4,6 +4,7 @@ export interface Timeframe {
 }
 
 export interface Card {
+  id: number;
   title: string;
   timeframes: {
     daily: Timeframe;
@@ -11,3 +12,4 @@ export interface Card {
     monthly: Timeframe;
   };
 }
+

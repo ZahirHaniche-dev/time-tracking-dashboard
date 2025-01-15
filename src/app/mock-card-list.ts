@@ -2,6 +2,7 @@ import { Card } from './card';
 
 export const CARDS: Card[] = [
     {
+      id: 1,
       title: "Work",
       timeframes: {
         daily: {
@@ -19,6 +20,7 @@ export const CARDS: Card[] = [
       }
     },
     {
+      id: 2,
       title: "Play",
       timeframes: {
         daily: {
@@ -36,6 +38,7 @@ export const CARDS: Card[] = [
       }
     },
     {
+      id: 3,
       title: "Study",
       timeframes: {
         daily: {
@@ -53,6 +56,7 @@ export const CARDS: Card[] = [
       }
     },
     {
+      id: 4,
       title: "Exercise",
       timeframes: {
         daily: {
@@ -70,6 +74,7 @@ export const CARDS: Card[] = [
       }
     },
     {
+      id: 5,
       title: "Social",
       timeframes: {
         daily: {
@@ -87,6 +92,7 @@ export const CARDS: Card[] = [
       }
     },
     {
+      id: 6,
       title: "Self Care",
       timeframes: {
         daily: {

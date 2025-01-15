@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Card } from './card';
 import { CARDS } from './mock-card-list';
@@ -10,7 +10,7 @@ import { CARDS } from './mock-card-list';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
-  cardList: Card[] = CARDS;
+  cardList = signal(CARDS);
   
   ngOnInit() {
     console.table(this.cardList);
