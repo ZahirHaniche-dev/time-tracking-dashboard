@@ -1,18 +1,22 @@
-import { Component, OnInit, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, signal } from '@angular/core';
 import { Card } from './card';
 import { CARDS } from './mock-card-list';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
-  cardList = signal(CARDS);
-  
-  ngOnInit() {
-    console.table(this.cardList);
+export class AppComponent {
+  // Signal contenant la liste des cartes
+  cardList = signal<Card[]>(CARDS);
+
+  // Signal pour la période active (daily, weekly, monthly)
+  activeTimeframe = signal<'daily' | 'weekly' | 'monthly'>('weekly');
+
+  // Méthode pour changer le filtre
+  changeTimeframe(timeframe: 'daily' | 'weekly' | 'monthly') {
+    this.activeTimeframe.set(timeframe);
   }
 }
