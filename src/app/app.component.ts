@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Card } from './card';
+import { CARDS } from './mock-card-list';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,10 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'angular material starter tailwind jest ngxs playwright';
+export class AppComponent implements OnInit {
+  cardList: Card[] = CARDS;
+  
+  ngOnInit() {
+    console.table(this.cardList);
+  }
 }
